@@ -1,0 +1,5 @@
+sql:
+  server: <SERVER NAME>
+  database: <DATABASE>
+  user: <USERNAME>
+  password: <PASSWORD>
