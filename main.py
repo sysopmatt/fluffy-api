@@ -1,9 +1,6 @@
 import sqlite3
-import confuse
 from flask import Flask, request, jsonify
 import os
-
-config = confuse.Configuration('fluffy-api', __name__)
 
 connection = sqlite3.connect('fluffy.db')
 ApiKeys = list()
