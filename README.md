@@ -13,4 +13,12 @@ Python API to receive and store pictures
 > brew install unixodbc freetds python-pyodbc
 2. Use config_default.yaml as template for your SQL configurations.  Copy and place in:
 >~/.config/fluffy-api/config.yaml
-3. 
+3. . 
+
+***
+
+### Testing 
+
+#### Test POST 
+> curl -i -H 'x-api-key: <INSERT API KEY HERE>' -F "image=@/path/to/image.png" http://localhost:5000/Upload/
+
