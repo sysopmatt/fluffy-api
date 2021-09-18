@@ -1,18 +1,8 @@
-import pyodbc
-import confuse
+import sqlite3
 from flask import Flask, request, jsonify
 import os
 
-config = confuse.Configuration('fluffy-api', __name__)
-
-connection = pyodbc.connect(
-    driver='{PostgreSQL Unicode}',
-    server=config['sql']['server'].get(),
-    user=config['sql']['user'].get(),
-    password=config['sql']['password'].get(),
-    database=config['sql']['user'].get(),
-    port=5432
-)
+connection = sqlite3.connect('fluffy.db')
 ApiKeys = list()
 
 cursor = connection.cursor()

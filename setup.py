@@ -1,17 +1,10 @@
-import pyodbc
+import sqlite3
 import confuse
 import secrets
 
 config = confuse.Configuration('fluffy-api', __name__)
 
-connection = pyodbc.connect(
-    driver='{PostgreSQL Unicode}',
-    server=config['sql']['server'].get(),
-    user=config['sql']['user'].get(),
-    password=config['sql']['password'].get(),
-    database=config['sql']['user'].get(),
-    port=5432
-)
+connection = sqlite3.connect('fluffy.db')
 cursor = connection.cursor()
 
 installconfirm = input("Would you like to proceed with installation?  All existing SQL configurations will be rest. \
@@ -25,7 +18,7 @@ if installconfirm.upper()[0:1] == 'Y':
     queries = ("""DROP TABLE IF EXISTS FluffyUsers""",
                """
                CREATE TABLE FluffyUsers (
-                    ID INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+                    ID INTEGER PRIMARY KEY AUTOINCREMENT
                     , Username varchar(255) NOT NULL 
                     , FirstName varchar(255) NULL 
                     , LastName varchar(255) NULL 
