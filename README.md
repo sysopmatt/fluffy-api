@@ -1,7 +1,11 @@
 # fluffy-api
 Python API to receive and store pictures
 
+***
+
 ### Setup steps
+
+
 #### MacOS
 1. Install python-pyodbc (maybe?)
 > brew update
