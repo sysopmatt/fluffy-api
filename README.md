@@ -20,5 +20,5 @@ Python API to receive and store pictures
 ### Testing 
 
 #### Test POST 
-> curl -i -H 'x-api-key: <INSERT API KEY HERE>' -F "image=@/path/to/image.png" http://localhost:5000/Upload/
+> curl -i -H 'x-api-key: &lt;INSERT API KEY HERE&gt;' -F "image=@/path/to/image.png" http://localhost:5000/Upload/
 
