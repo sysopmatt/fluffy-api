@@ -1,8 +1,6 @@
 # fluffy-api
 Python API to receive and store pictures
 
-To Do:
-1. Create setup.py
 
 ***
 

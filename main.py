@@ -6,18 +6,17 @@ import os
 config = confuse.Configuration('fluffy-api', __name__)
 
 connection = pyodbc.connect(
+    driver='{PostgreSQL Unicode}',
     server=config['sql']['server'].get(),
-    database=config['sql']['database'].get(),
     user=config['sql']['user'].get(),
-    tds_version='7.4',
     password=config['sql']['password'].get(),
-    port=1433,
-    driver='/usr/local/lib/libtdsodbc.so'
+    database=config['sql']['user'].get(),
+    port=5432
 )
 ApiKeys = list()
 
 cursor = connection.cursor()
-cursor.execute("SELECT DISTINCT ApiKey FROM FluffyUsers")
+cursor.execute("SELECT DISTINCT ApiKey FROM FluffyUsers;")
 row = cursor.fetchall()
 for key in row:
     ApiKeys.append(key[0])
