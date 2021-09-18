@@ -1,0 +1,4 @@
+# Dependencies for generating/publishing Python binaries.
+pyodbc
+confuse
+flask
